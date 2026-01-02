@@ -15,11 +15,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: const Text("Firebase Connected")),
-        body: const Center(child: Text("🔥 Firebase is working")),
+        body: Center(
+          child: Text(
+            "🔥 Firebase Initialized Successfully",
+            style: TextStyle(fontSize: 20),
+          ),
+        ),
       ),
     );
   }
