@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'screens/login_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const WeatherApp());
+  runApp(const MyApp());
 }
 
-class WeatherApp extends StatelessWidget {
-  const WeatherApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Weather App',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const LoginScreen(),
+      home: Scaffold(
+        appBar: AppBar(title: const Text("Firebase Connected")),
+        body: const Center(child: Text("🔥 Firebase is working")),
+      ),
     );
   }
 }
